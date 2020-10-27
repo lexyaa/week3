@@ -1,0 +1,40 @@
+module tb_a;
+// -----------------------------------------
+// instances
+// -----------------------------------------
+parameter N = 2; 
+
+//inputs
+reg [N-1:0] d0;
+reg [N-1:0] d1;
+reg [N-1:0] s;
+
+//output
+wire y;
+
+mux4 mux4_u0( .y  ( y  ),
+              .d0 ( d0 ),
+              .d1 ( d1 ),
+              .s  ( s  ));
+
+// ------------------------------------------
+// stimulus
+// ------------------------------------------
+initial begin
+    $display("======================================================");
+    $display("  d0  d1  s  y");
+    $display("======================================================");
+    #(50) {d0, d1, s} = $random(); $display("%b  %b  %b  %b", d0, d1, s, y);
+    #(50) {d0, d1, s} = $random(); $display("%b  %b  %b  %b", d0, d1, s, y);
+    #(50) {d0, d1, s} = $random(); $display("%b  %b  %b  %b", d0, d1, s, y);
+    #(50) {d0, d1, s} = $random(); $display("%b  %b  %b  %b", d0, d1, s, y);
+    #(50) {d0, d1, s} = $random(); $display("%b  %b  %b  %b", d0, d1, s, y);
+    #(50) {d0, d1, s} = $random(); $display("%b  %b  %b  %b", d0, d1, s, y);
+    #(50) {d0, d1, s} = $random(); $display("%b  %b  %b  %b", d0, d1, s, y);
+    #(50) {d0, d1, s} = $random(); $display("%b  %b  %b  %b", d0, d1, s, y);
+    #(50) {d0, d1, s} = $random(); $display("%b  %b  %b  %b", d0, d1, s, y);
+    #(50) {d0, d1, s} = $random(); $display("%b  %b  %b  %b", d0, d1, s, y);
+    #(50) $finish;
+end
+
+endmodule
